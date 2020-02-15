@@ -19,6 +19,19 @@
                     return true;
                 }
                 
+                function rightAnswer(index){
+                    $(`#q${index}Feedback`).html("Correct!");
+                    $(`#q${index}Feedback`).attr("class", "bg-success text-white");
+                    $(`#markImg${index}`).html("<img src='img/checkmark.png' alt='xmark'>");
+                    score += 20;
+                }
+                
+                function wrongAnswer(index){
+                    $(`#q${index}Feedback`).html("Incorrect!");
+                    $(`#q${index}Feedback`).attr("class", "bg-warning text-white");
+                    $(`#markImg${index}`).html("<img src='img/xmark.png' alt='xmark'>");
+                }
+                
                 function gradeQuiz(){
                     $("#validationFdbk").html("");
                     
@@ -30,27 +43,11 @@
                     let q1Response = $("#q1").val().toLowerCase();
                     let q2Response = $("#q2").val();
                     
-                    if ( q1Response == "sacramento" ){
-                        $("#q1Feedback").html("Correct!");
-                        $("#q1Feedback").attr("class", "bg-success text-white");
-                        $("#markImg1").html("<img src='img/checkmark.png' alt='xmark'>");
-                        score += 20;
-                    } else{
-                        $("#q1Feedback").html("Incorrect!");
-                        $("#q1Feedback").attr("class", "bg-warning text-white");
-                        $("#markImg1").html("<img src='img/xmark.png' alt='xmark'>");
-                    }
+                    if ( q1Response == "sacramento" ){ rightAnswer(1); } 
+                    else{ wrongAnswer(1); }
                     
-                    if (q2Response == "mo"){
-                        $("#q2Feedback").html("Correct!");
-                        $("#q2Feedback").attr("class", "bg-success text-white");
-                        $("#markImg2").html("<img src='img/checkmark.png' alt='xmark'>");
-                        score += 20;
-                    } else {
-                        $("#q1Feedback").html("Incorrect!");
-                        $("#q1Feedback").attr("class", "bg-warning text-white");
-                        $("#markImg2").html("<img src='img/xmark.png' alt='xmark'>");
-                    }
+                    if (q2Response == "mo"){ rightAnswer(2); } 
+                    else { wrongAnswer(2); }
                     
                     $("#totalScore").html(`Total Score: ${score}`);
                 }
@@ -63,11 +60,16 @@
     <body class="text-center">
         <h1 class="jumbotron">US Geography Quiz</h1>
         
+        
+        <!-- Q1 start -->
         <h3><span id="markImg1"></span>What is the capital of California?</h3>
         <input type="text" id="q1">
         <div id="q1Feedback"></div>
         <br>
+        <!-- Q1 end -->
         
+        
+        <!-- Q2 start -->
         <h3><span id="markImg2"></span>What is the longest river?</h3>
         <select id="q2">
             <option value ="">Select One</option>
@@ -79,11 +81,14 @@
         <br><br>
         <div id="q2Feedback"></div>
         <br>
+        <!-- Q2 end -->
         
+        <!-- Validation and submit start -->
         <h3 id="validationFdbk" class="bg-danger text-white"></h3>
         <button class="btn btn-outline-success"> Submit Quiz </button>
         <br>
         <h2 id="totalScore" class="text-info"></h2>
+        <!-- Validation and submit end -->
     </body>
     
 </html>
