@@ -97,16 +97,12 @@
                     $("#totalAttempts").html(`Total Attempts: ${++attempts}`);
                     localStorage.setItem("total_attempts", attempts);
                     
-                    if ( score > 80 ){
-                        $("#totalScore").removeClass("text-info");
-                         $("#totalScore").removeClass("text-info");
-                        $("#totalScore").addClass("text-success");
+                    if ( score >= 80 ){
+                        $("#totalScore").toggleClass("text-success");
                         $("#congrats").html("Good Job!");
                     }
                     else{ 
-                        $("#totalScore").removeClass("text-info");
-                        $("#totalScore").removeClass("text-success");
-                        $("#totalScore").addClass("text-danger");
+                        $("#totalScore").toggleClass("text-danger");
                     }
                 }
                 
@@ -175,7 +171,7 @@
         <h3 id="validationFdbk" class="bg-danger text-white"></h3>
         <button class="btn btn-outline-success"> Submit Quiz </button>
         <br>
-        <h2 id="totalScore" class="text-info"></h2>
+        <h2 id="totalScore" class="text-success"></h2>
         <h2 id="congrats" class="text-info"></h2>
         <h3 id="totalAttempts"></h3>
         <!-- Validation and submit end -->
