@@ -10,6 +10,7 @@
         
             $(document).ready(function(){
                 var score = 0;
+                var attempts = 0;
                 
                 $('button').on('click', gradeQuiz);
                 
@@ -82,7 +83,16 @@
                     if ( q4Response == "Rhode Island" ){ rightAnswer(4); }
                     else { wrongAnswer(4); }
                     
+                    if ( $("#seal2").css("background-color") == "rgb(255, 255, 0)" ){
+                        rightAnswer(5);
+                    }
+                    else {
+                        wrongAnswer(5);
+                    }
+                    
                     $("#totalScore").html(`Total Score: ${score}`);
+                
+                    $("#totalAttempts").html(`Total Attempts: ${++totalAttempts});
                 }
                 
             });// ready
@@ -151,6 +161,7 @@
         <button class="btn btn-outline-success"> Submit Quiz </button>
         <br>
         <h2 id="totalScore" class="text-info"></h2>
+        <h3 id="totalAttempts"></h3>
         <!-- Validation and submit end -->
     </body>
     
