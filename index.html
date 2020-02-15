@@ -40,6 +40,8 @@
                         return;
                     }
                     
+                    score = 0;
+                    
                     let q1Response = $("#q1").val().toLowerCase();
                     let q2Response = $("#q2").val();
                     
@@ -48,6 +50,15 @@
                     
                     if (q2Response == "mo"){ wrongAnswer(2); } 
                     else { wrongAnswer(2); }
+                    
+                    if ( 
+                        $("#Jefferson").is(":checked") && 
+                        $("#Roosevelt").is(":checked") &&
+                        $("#Jackson").is(":checked")   &&
+                        $("#Franklin").is(":checked")  ){
+                            rightAnswer(3);
+                        }
+                    else { wrongAnswer(3); }
                     
                     $("#totalScore").html(`Total Score: ${score}`);
                 }
@@ -82,6 +93,19 @@
         <div id="q2Feedback"></div>
         <br>
         <!-- Q2 end -->
+        
+        
+        <!-- Q2 start -->
+        <h3><span id="markImg3"></span>What Presidents are carved into mount Rushmore?</h3>
+        <input type="checkbox" id="Jackson"> <label for="Jackson">A. Jackson</label>
+        <input type="checkbox" id="Franklin"> <label for="Jackson">B. Franklin</label>
+        <input type="checkbox" id="Jefferson"> <label for="Jackson">T. Jefferson</label>
+        <input type="checkbox" id="Roosevelt"> <label for="Jackson">T. Roosevelt</label>
+        <br><br>
+        <div id="q3Feedback"></div>
+        <br>
+        <!-- Q2 end  -->
+        
         
         <!-- Validation and submit start -->
         <h3 id="validationFdbk" class="bg-danger text-white"></h3>
