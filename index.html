@@ -13,6 +13,7 @@
                 
                 function isFormValid(){
                     if ( $('#q1').val() == "" ){
+                        $("#validationFdbk").html("Question 1 was not answered");
                         return false;
                     }
                     return true;
