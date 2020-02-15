@@ -99,11 +99,14 @@
                     
                     if ( score > 80 ){
                         $("#totalScore").removeClass("text-info");
-                        $("#totalScore").toggleClass("text-success");
+                         $("#totalScore").removeClass("text-info");
+                        $("#totalScore").addClass("text-success");
                         $("#congrats").html("Good Job!");
                     }
                     else{ 
-                        $("#totalScore").toggleClass("text-danger");
+                        $("#totalScore").removeClass("text-info");
+                        $("#totalScore").removeClass("text-success");
+                        $("#totalScore").removeClass("text-danger");
                     }
                 }
                 
