@@ -98,11 +98,13 @@
                     localStorage.setItem("total_attempts", attempts);
                     
                     if ( score >= 80 ){
-                        $("#totalScore").toggleClass("text-success");
+                        $("#totalScore").removeClass("text-danger");
+                        $("#totalScore").addClass("text-success");
                         $("#congrats").html("Good Job!");
                     }
                     else{ 
-                        $("#totalScore").toggleClass("text-danger");
+                        $("#totalScore").removeClass("text-success");
+                        $("#totalScore").addClass("text-danger");
                     }
                 }
                 
