@@ -13,6 +13,11 @@
                 
                 $('button').on('click', gradeQuiz);
                 
+                $(".q5Choice").on("click", function(){
+                    $(".q5Choice").css("background", "");
+                    $(this).css("background", "rgb(255, 255, 0)");
+                });
+                
                 function displayQ4Choices(){
                     let q4ChoicesArray = ["Maine", "Rhode Island", "Maryland", "Delaware"];
                     q4ChoicesArray = _.shuffle(q4ChoicesArray);
@@ -62,7 +67,7 @@
                     if ( q1Response == "sacramento" ){ rightAnswer(1); } 
                     else{ wrongAnswer(1); }
                     
-                    if (q2Response == "mo"){ wrongAnswer(2); } 
+                    if (q2Response == "mo"){ rightAnswer(2); } 
                     else { wrongAnswer(2); }
                     
                     if ( 
@@ -130,6 +135,16 @@
         <div id="q4Feedback"></div>
         <br><br>
         <!-- Q4 end  -->
+        
+        
+        <!-- Q5 Start  -->
+        <h3><span id="markImg5"></span>What image is in the Great Seal of the State of California?</h3>
+        <img src="img/seal1.png" alt"Seal 1" class="q5Choice" id="seal1">
+        <img src="img/seal2.png" alt"Seal 2" class="q5Choice" id="seal2">
+        <img src="img/seal3.png" alt"Seal 3" class="q5Choice" id="seal3">
+        <div id="q5Feedback"></div>
+        <br><br>
+        <!-- Q5 end  -->
         
         <!-- Validation and submit start -->
         <h3 id="validationFdbk" class="bg-danger text-white"></h3>
