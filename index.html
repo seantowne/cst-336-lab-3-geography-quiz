@@ -10,7 +10,7 @@
         
             $(document).ready(function(){
                 var score = 0;
-                var attempts = 0;
+                var attempts = localStorage.getItem("total_attempts");
                 
                 $('button').on('click', gradeQuiz);
                 
@@ -92,7 +92,8 @@
                     
                     $("#totalScore").html(`Total Score: ${score}`);
                 
-                    $("#totalAttempts").html(`Total Attempts: ${++totalAttempts});
+                    $("#totalAttempts").html(`Total Attempts: ${++totalAttempts}`);
+                    localStorage.setItem("total_attempts", attempts);
                 }
                 
             });// ready
