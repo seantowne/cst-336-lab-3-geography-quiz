@@ -44,6 +44,7 @@
                     
                     let q1Response = $("#q1").val().toLowerCase();
                     let q2Response = $("#q2").val();
+                    let q4Response = $("input[name=q4]:checked").val();
                     
                     if ( q1Response == "sacramento" ){ rightAnswer(1); } 
                     else{ wrongAnswer(1); }
@@ -59,6 +60,9 @@
                             rightAnswer(3);
                         }
                     else { wrongAnswer(3); }
+                    
+                    if ( q4Response == "Rhode Island" ){ rightAnswer(4); }
+                    else { wrongAnswer(4); }
                     
                     $("#totalScore").html(`Total Score: ${score}`);
                 }
@@ -95,7 +99,7 @@
         <!-- Q2 end -->
         
         
-        <!-- Q2 start -->
+        <!-- Q3 start -->
         <h3><span id="markImg3"></span>What Presidents are carved into mount Rushmore?</h3>
         <input type="checkbox" id="Jackson"> <label for="Jackson">A. Jackson</label>
         <input type="checkbox" id="Franklin"> <label for="Jackson">B. Franklin</label>
@@ -104,8 +108,18 @@
         <br><br>
         <div id="q3Feedback"></div>
         <br>
-        <!-- Q2 end  -->
+        <!-- Q3 end  -->
         
+        
+        <!-- Q4 Start  -->
+        <h3><span id = "markImg4"></span>What is the smallest US State?</h3>
+        <input type="radio" name="q4" id="me" value="Maine"><label for="me">Maine</label>
+        <input type="radio" name="q4" id="me" value="Maine"><label for="ri">Rhode Island</label>
+        <input type="radio" name="q4" id="me" value="Maine"><label for="md">Maryland</label>
+        <input type="radio" name="q4" id="me" value="Maine"><label for="de">Delaware</label>
+        <div id="q4Feedback"></div>
+        <br><br>
+        <!-- Q4 end  -->
         
         <!-- Validation and submit start -->
         <h3 id="validationFdbk" class="bg-danger text-white"></h3>
