@@ -96,10 +96,10 @@
                     $("#totalAttempts").html(`Total Attempts: ${++attempts}`);
                     localStorage.setItem("total_attempts", attempts);
                     if ( score > 80 ){
-                        $("#totalAttempts").css("color", "red");
+                        $("#totalAttempts").css("color", "green");
                     }
                     else{
-                        $("#totalAttempts").css("color", "green");
+                        $("#totalAttempts").css("color", "red");
                     }
                 }
                 
