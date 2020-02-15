@@ -8,6 +8,7 @@
         <script>
         
             $(document).ready(function(){
+                var score = 0;
                 
                 $('button').on('click', gradeQuiz);
                 
@@ -39,7 +40,6 @@
                         return;
                     }
                     
-                    let score = 0;
                     let q1Response = $("#q1").val().toLowerCase();
                     let q2Response = $("#q2").val();
                     
