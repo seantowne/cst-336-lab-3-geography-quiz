@@ -40,11 +40,12 @@
                     return true;
                 }
                 
-                function rightAnswer(index){
+                function rightAnswer(index, special){
                     $(`#q${index}Feedback`).html("Correct!");
                     $(`#q${index}Feedback`).attr("class", "bg-success text-white");
                     $(`#markImg${index}`).html("<img src='img/checkmark.png' alt='xmark'>");
-                    score += 20;
+                    if ( special ) score += 12.5;
+                    else score += 20;
                 }
                 
                 function wrongAnswer(index){
@@ -69,7 +70,7 @@
                     let q6Response = $("#monthInput").val();
                     let q7Response = $("#statesInUS").val();
                     
-                    if ( q1Response == "sacramento" ){ rightAnswer(1); } 
+                    if ( q1Response == "sacramento" ){ rightAnswer(1, false); } 
                     else{ wrongAnswer(1); }
                     
                     if (q2Response == "mo"){ rightAnswer(2); } 
@@ -80,29 +81,29 @@
                         $("#Roosevelt").is(":checked") &&
                         $("#Jackson").is(":checked")   &&
                         $("#Franklin").is(":checked")  ){
-                            rightAnswer(3);
+                            rightAnswer(3, false);
                         }
                     else { wrongAnswer(3); }
                     
-                    if ( q4Response == "Rhode Island" ){ rightAnswer(4); }
+                    if ( q4Response == "Rhode Island" ){ rightAnswer(4, false); }
                     else { wrongAnswer(4); }
                     
                     if ( $("#seal2").css("background-color") == "rgb(255, 255, 0)" ){
-                        rightAnswer(5);
+                        rightAnswer(5, false);
                     }
                     else {
                         wrongAnswer(5);
                     }
                     
                     if ( q6Response == "1850-09"){
-                        rightAnswer(6);
+                        rightAnswer(6, true);
                     }
                     else{
                         wrongAnswer(6);
                     }
                     
                     if ( q7Response == "50" ){
-                        rightAnswer(7);
+                        rightAnswer(7, true);
                     }else{
                         wrongAnswer(7);
                     }
