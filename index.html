@@ -79,6 +79,7 @@
                         q8Response == ""
                     ){
                         $("#validationFdbk").html("Please answer all questions");
+                        return;
                     }
                     
                     if ( q1Response == "sacramento" ){ rightAnswer(1, false); } 
