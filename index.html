@@ -33,7 +33,7 @@
                 
                 
                 function isFormValid(){
-                    if ( $('#q1').val() == "" ){
+                    if ( $('#q1').val() == ""){
                         $("#validationFdbk").html("Question 1 was not answered");
                         return false;
                     }
@@ -70,6 +70,16 @@
                     let q6Response = $("#monthInput").val();
                     let q7Response = $("#statesInUS").val();
                     let q8Response = $("#q8").val();
+                    
+                    if ( 
+                        q2Response == "" ||
+                        q4Response == "" ||
+                        q6Response == "" ||
+                        q7Response == "" ||
+                        q8Response == ""
+                    ){
+                        $("#validationFdbk").html("Please answer all questions");
+                    }
                     
                     if ( q1Response == "sacramento" ){ rightAnswer(1, false); } 
                     else{ wrongAnswer(1); }
