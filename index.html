@@ -67,6 +67,7 @@
                     let q2Response = $("#q2").val();
                     let q4Response = $("input[name=q4]:checked").val();
                     let q6Response = $("#monthInput").val();
+                    let q7Response = $("#statesInUS").val();
                     
                     if ( q1Response == "sacramento" ){ rightAnswer(1); } 
                     else{ wrongAnswer(1); }
@@ -98,6 +99,12 @@
                     }
                     else{
                         wrongAnswer(6);
+                    }
+                    
+                    if ( q7Response == "50" ){
+                        rightAnswer(7);
+                    }else{
+                        wrongAnswer(7);
                     }
                     
                     
@@ -187,6 +194,9 @@
         <!-- Q6 end  -->
         
         <!-- Q7 Start  -->
+        <h3><span id="markImg6"></span>How many States are in the U.S?</h3>
+        <input type="number" id="statesInUS">
+        <br><br>
         <!-- Q7 end  -->
         
         <!-- Q8 Start  -->
