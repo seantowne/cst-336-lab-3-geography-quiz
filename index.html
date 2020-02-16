@@ -66,6 +66,7 @@
                     let q1Response = $("#q1").val().toLowerCase();
                     let q2Response = $("#q2").val();
                     let q4Response = $("input[name=q4]:checked").val();
+                    let q6Response = $("#monthInput").val();
                     
                     if ( q1Response == "sacramento" ){ rightAnswer(1); } 
                     else{ wrongAnswer(1); }
@@ -91,6 +92,14 @@
                     else {
                         wrongAnswer(5);
                     }
+                    
+                    if ( q6Response == "1850-09"){
+                        rightAnswer(6);
+                    }
+                    else{
+                        wrongAnswer(6);
+                    }
+                    
                     
                     $("#totalScore").html(`Total Score: ${score}`);
                 
@@ -171,7 +180,7 @@
         
         
         <!-- Q6 Start  -->
-        <h3><span id="markImg6"></span>What Month was California admitted to the Union?</h3>
+        <h3><span id="markImg6"></span>What Month and Year was California admitted to the Union?</h3>
         <input type="month" id="monthInput">
         <div id="q6Feedback"></div>
         <br><br>
